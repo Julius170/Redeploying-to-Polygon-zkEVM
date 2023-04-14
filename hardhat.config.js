@@ -1,14 +1,14 @@
 require("dotenv").config();
 require("@nomiclabs/hardhat-ethers");
-const { API_URL, PRIVATE_KEY } = process.env;
+const { RPC_URL, PRIVATE_KEY } = process.env;
 module.exports = {
-  solidity: "0.8.1",
+  solidity: "0.8.0",
   defaultNetwork: "goerli",
   networks: {
     hardhat: {},
     goerli: {
       url: process.env.RPC_URL,
-      accounts: [`0x${process.env.PRIVATE_KEY}`],
+      accounts: [process.env.PRIVATE_KEY],
     },
   },
 };
